@@ -1,7 +1,7 @@
 package boostrpc
 
 import (
-	"boostrpc/internal/grpc_server"
+	"github.com/lowl11/boostrpc/internal/grpc_server"
 	"google.golang.org/grpc"
 )
 
