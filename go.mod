@@ -1,4 +1,4 @@
-module boostrpc
+module github.com/lowl11/boostrpc
 
 go 1.20
 
