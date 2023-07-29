@@ -1,6 +1,9 @@
 package grpc_server
 
-import "net"
+import (
+	"google.golang.org/grpc"
+	"net"
+)
 
 func (server *Server) Start(port string) error {
 	listener, err := net.Listen("tcp", port)
@@ -20,4 +23,8 @@ func (server *Server) Close() error {
 	}
 
 	return server.listener.Close()
+}
+
+func (server *Server) RegisterService(desc *grpc.ServiceDesc, impl interface{}) {
+	server.grpcServer.RegisterService(desc, impl)
 }
