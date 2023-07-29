@@ -2,12 +2,8 @@ package boostrpc
 
 import "github.com/lowl11/lazylog/log"
 
-func (app *App) Run(port string) {
-	log.Fatal(app.server.Start(port))
-}
-
-func (app *App) RunAsync(port string) {
-	go app.Run(port)
+func (app *App) Run(port string) error {
+	return app.server.Start(port)
 }
 
 func (app *App) Close() {
